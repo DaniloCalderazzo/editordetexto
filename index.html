@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Texto</title>
+    <link rel="stylesheet" href="styles/styles.css">
+	
+    <!-- Etiqueta de codificación -->
+    <meta charset="UTF-8">
+
+    <!-- Etiqueta de idioma -->
+    <meta name="language" content="Spanish">
+
+    <!-- Etiqueta de viewport para diseño responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Etiqueta de descripción -->
+    <meta name="description" content="Simple editor de texto web, edita txt y csv rápidamente">
+
+    <!-- Etiqueta de autor -->
+    <meta name="author" content="Danilo Calderazzo">
+
+    <!-- Etiqueta de robots para controlar el rastreo e indexación -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Etiqueta de keywords (aunque su importancia ha disminuido, aún puede ser útil) -->
+    <meta name="keywords" content="Editor de texto, Notepad, bloc de notas, buscar y reemplazar, csv, txt">
+
+    <!-- Etiqueta de título -->
+    <title>Editor de Texto</title>
+
+    <!-- Etiqueta Open Graph para mejorar la visualización en redes sociales -->
+    <meta property="og:title" content="Editor de Texto">
+    <meta property="og:description" content="Simple editor de texto web, edita txt y csv rápidamente">
+    <meta property="og:url" content="URL_de_tu_página">
+    <meta property="og:type" content="website">
+
+    
+</head>
+<body>
+    <header>
+        <h1>Editor de texto</h1>
+    </header>
+    
+    <div class="container">
+        <div class="editor-container">
+            <input type="file" id="fileInput" accept=".txt,.csv">
+            <textarea id="textArea" placeholder="Edita tu texto aquí..."></textarea>
+            
+            <label for="fileName">Nombre del archivo:</label>
+            <input type="text" id="fileName" placeholder="Ingresa el nombre del archivo">
+
+            <label for="fileType">Tipo de archivo:</label>
+            <select id="fileType">
+                <option value="txt">TXT</option>
+                <option value="csv">CSV</option>
+            </select>
+
+            <button id="downloadBtn">Descargar</button>
+        </div>
+
+        <div class="accordion-container">
+            <button class="accordion">Buscar</button>
+            <div class="panel">
+                <label for="searchInput">Buscar:</label>
+                <input type="text" id="searchInput" placeholder="Ingresa texto o expresión regular">
+                <button id="searchBtn">Buscar</button>
+                <p id="resultCount"></p>
+                <div class="navigation">
+                    <button id="prevResult">←</button>
+                    <button id="nextResult">→</button>
+                </div>
+            </div>
+
+            <button class="accordion">Sustituir</button>
+            <div class="panel">
+                <label for="findInput">Buscar:</label>
+                <input type="text" id="findInput" placeholder="Ingresa texto o expresión regular">
+                <label for="replaceInput">Sustituir por:</label>
+                <input type="text" id="replaceInput" placeholder="Ingresa el texto de reemplazo">
+                <button id="replaceNextBtn">Sustituir siguiente</button>
+                <button id="replaceAllBtn">Sustituir todo</button>
+                <p id="replaceCount"></p>
+                <button id="replaceLineBreaksBtn">Sustituir saltos de línea por comas</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Proyecto elaborado por <a href="https://www.linkedin.com/in/danilocalderazzo/" target="_blank">Danilo Calderazzo</a> con ayuda de ChatGPT.
+    </footer>
+
+    <script src="scripts/fileUpload.js"></script>
+    <script src="scripts/fileDownload.js"></script>
+    <script src="scripts/searchModule.js"></script>
+    <script src="scripts/substitutionModule.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
