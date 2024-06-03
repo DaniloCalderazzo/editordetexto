@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    background-color: #ff6600;
+    color: white;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    max-width: 1200px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.editor-container, .accordion-container {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.editor-container {
+    flex: 1;
+    min-width: 300px;
+    border-right: 1px solid #ddd;
+}
+
+.accordion-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+#fileInput, #fileName, #fileType, #downloadBtn {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#textArea {
+    width: 100%;
+    height: 400px;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+}
+
+label {
+    display: block;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+/* Estilos para el acordeón */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    border-radius: 4px;
+    margin: 5px 0;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.panel.show {
+    display: block;
+}
+
+/* Estilos para los módulos */
+.navigation {
+    margin-top: 10px;
+}
+
+.navigation button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+}
+
+#replaceNextBtn, #replaceAllBtn, #replaceLineBreaksBtn {
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #ff6600;
+    color: white;
+    position: fixed;
+    bottom: 0;
+}
+
+footer a {
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .editor-container {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+    .accordion-container {
+        width: 100%;
+        margin-left: 0;
+    }
+}
